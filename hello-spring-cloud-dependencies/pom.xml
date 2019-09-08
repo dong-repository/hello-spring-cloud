@@ -11,7 +11,7 @@
     <groupId>com.funtl</groupId>
     <artifactId>hello-spring-cloud-dependencies</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>poc</packaging>
+    <packaging>pom</packaging>
 
     <name>hello-spring-cloud-dependencies</name>
     <url>http://www.funtl.com</url>
@@ -22,6 +22,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+        <zipkin.version>2.10.1</zipkin.version>
+        <spring-boot-admin.version>2.0.1</spring-boot-admin.version>
     </properties>
 
 
@@ -34,6 +36,37 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-server</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.zipkin.java</groupId>
+                <artifactId>zipkin-autoconfigure-ui</artifactId>
+                <version>${zipkin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-server</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin.version}</version>
+            </dependency>
+
+
+
         </dependencies>
     </dependencyManagement>
     <dependencies>
